@@ -1,0 +1,85 @@
+.hangman-drawing{
+    position: relative;
+    & .drawing-head{
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        border: 10px solid black;
+        top: 50px;
+        right: -30px;
+    }
+    & .drawing-body{
+        position: absolute;
+        height: 100px;
+        width: 10px;
+        background: black;
+        top: 115px;
+        right: 0;
+    }
+    & .drawing-rarm{
+        position: absolute;
+        height: 10px;
+        width: 100px;
+        background: black;
+        top: 150px;
+        right: -100px;
+        rotate: -30deg;
+        transform-origin: left bottom;
+    }
+    & .drawing-larm{
+        position: absolute;
+        height: 10px;
+        width: 100px;
+        background: black;
+        top: 150px;
+        right: 10px;
+        rotate: 30deg;
+        transform-origin: right bottom;
+    }
+    & .drawing-rleg{
+        position: absolute;
+        height: 10px;
+        width: 100px;
+        background: black;
+        top: 200px;
+        right: -90px;
+        rotate: 60deg;
+        transform-origin: left bottom;
+    }
+    & .drawing-lleg{
+        position: absolute;
+        height: 10px;
+        width: 100px;
+        background: black;
+        top: 200px;
+        right: 0;
+        rotate: -60deg;
+        transform-origin: right bottom;
+    }
+    & .drawing-rope{
+        position: absolute;
+        height: 50px;
+        width: 10px;
+        background: black;
+        top: 0;
+        right: 0;
+    }
+    & .drawing-hook{
+        height: 10px;
+        width: 200px;
+        background: black;
+        margin-left: 120px;
+    }
+    & .drawing-pole{
+        height: 400px;
+        width: 10px;
+        background: black;
+        margin-left: 120px;
+    }
+    & .drawing-stand{
+        height: 10px;
+        width: 250px;
+        background: black;
+    }
+}
