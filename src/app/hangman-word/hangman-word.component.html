@@ -1,1 +1,14 @@
-<p>hangman-word works!</p>
+<div class="word-container">
+    <span *ngFor="let letter of word" class="word-letter">
+        @if(guessedLetters.includes(letter)){
+            <span>
+                {{letter}}
+            </span>
+        }
+        @else{
+            <span class="hidden-letter">
+                {{letter}}
+            </span>
+        }
+    </span>
+</div>

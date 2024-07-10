@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { HangmanKeyboardService } from './hangman-keyboard.service';
 
 @Component({
-  selector: 'app-hangman-keyboard',
+  selector: 'hangman-keyboard',
   standalone: true,
   imports: [],
   templateUrl: './hangman-keyboard.component.html',
   styleUrl: './hangman-keyboard.component.scss'
 })
 export class HangmanKeyboardComponent {
-
+  constructor(hangmanKeyboardService: HangmanKeyboardService){
+    
+  }
 }

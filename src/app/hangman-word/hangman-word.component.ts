@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-hangman-word',
+  selector: 'hangman-word',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './hangman-word.component.html',
   styleUrl: './hangman-word.component.scss'
 })
 export class HangmanWordComponent {
-
+  @Input() word = ['y','e','s','s','i','r'];
+  @Input() guessedLetters = ['h','p'];
 }
