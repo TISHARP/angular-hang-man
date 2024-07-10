@@ -1,15 +1,26 @@
-import { Component } from '@angular/core';
-import { HangmanKeyboardService } from './hangman-keyboard.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
+import { KEYS } from '../../utils/constants';
 
 @Component({
   selector: 'hangman-keyboard',
   standalone: true,
-  imports: [],
+  imports: [NgFor, CommonModule],
   templateUrl: './hangman-keyboard.component.html',
   styleUrl: './hangman-keyboard.component.scss'
 })
 export class HangmanKeyboardComponent {
-  constructor(hangmanKeyboardService: HangmanKeyboardService){
-    
-  }
+  mkeys = KEYS as string[];
+  guessedLetters = [] as string[];
+  @Input() enabled = true as boolean;
+  @Output() guessEvent = new EventEmitter<string[]>();
+  sendKeys = () => {
+    this.guessEvent.emit(this.guessedLetters);
+  };
+  addKey = (key:string) => {
+    if(this.guessedLetters.includes(key) || !this.enabled) return;
+    this.guessedLetters.push(key);
+    this.sendKeys();
+  };
+  constructor() {}
 }

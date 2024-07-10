@@ -1,12 +1,30 @@
 <div class="hangman-drawing">
-    <div class="drawing-head"></div>
-    <div class="drawing-body"></div>
-    <div class="drawing-larm"></div>
-    <div class="drawing-rarm"></div>
-    <div class="drawing-lleg"></div>
-    <div class="drawing-rleg"></div>
-    <div class="drawing-rope"></div>
-    <div class="drawing-hook"></div>
-    <div class="drawing-pole"></div>
+    @if (8>remaining){
+        <div class="drawing-hook"></div>
+    }
+    @if (9>remaining){
+        <div class="drawing-pole"></div>
+    }
+    @if (7>remaining){
+        <div class="drawing-rope"></div>
+    }
+    @if (6>remaining){
+        <div class="drawing-head"></div>
+    }
+    @if (5>remaining){
+        <div class="drawing-body"></div>
+    }
+    @if (4>remaining){
+        <div class="drawing-larm"></div>
+    }
+    @if (3>remaining){
+        <div class="drawing-rarm"></div>
+    }
+    @if (2>remaining){
+        <div class="drawing-lleg"></div>
+    }
+    @if (1>remaining){
+        <div class="drawing-rleg"></div>
+    }
     <div class="drawing-stand"></div>
 </div>

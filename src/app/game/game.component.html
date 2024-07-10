@@ -1,15 +1,19 @@
 <div class="game">
-    <div class="end-text">
-        Lose
-        Win
+    <div [ngClass]="{'end-text': true, 'hidden': !ended}">
+        @if(remaining===0){
+            Lose
+        }
+        @else{
+            Win
+        }
     </div>
-    <hangman-drawing>
+    <hangman-drawing [remaining]="remaining" [word]="wordToGuess" [guessedLetters]="guessedLetters">
 
     </hangman-drawing>
-    <hangman-word [word]="wordToGuess.split('')">
+    <hangman-word [word]="wordToGuess.split('')" [guessedLetters]="guessedLetters">
 
     </hangman-word>
-    <hangman-keyboard>
-        
+    <hangman-keyboard (guessEvent)="receiveKeys($event)" [enabled]="!ended" style="width:100%">
+
     </hangman-keyboard>
 </div>

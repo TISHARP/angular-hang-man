@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'hangman-drawing',
@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './hangman-drawing.component.scss'
 })
 export class HangmanDrawingComponent {
-
+  @Input() word = '';
+  @Input() guessedLetters = [] as string[];
+  @Input() allowedAttempts = 6 as number;
+  @Input() remaining = this.allowedAttempts - this.guessedLetters.filter((v)=>!this.word.includes(v)).length as number;
 }

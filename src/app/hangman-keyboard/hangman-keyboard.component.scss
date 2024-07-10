@@ -1,0 +1,29 @@
+.keyboard-wrapper{
+    align-self: stretch;
+}
+.keyboard-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.5rem;
+    & .keyboard-btn{
+        width: 100%;
+        border: 3px solid black;
+        background: none;
+        aspect-ratio: 1 / 1;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        padding: 0.5rem;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+        &.active{
+            background-color: hsl(200,100%,50%);
+        }
+        &.inactive{
+            opacity: 0.3;
+        }
+        &:hover:not(.inactive), &:focus:not(.inactive){
+            background-color: hsl(200,100%,75%);
+        }
+    }
+}
