@@ -15,7 +15,7 @@
         <hangman-word [ended]="ended" [word]="wordToGuess.split('')" [guessedLetters]="guessedLetters">
 
         </hangman-word>
-        <hangman-keyboard (guessEvent)="receiveKeys($event)" [enabled]="!ended" style="width:100%">
+        <hangman-keyboard (guessEvent)="receiveKeys($event)" [enabled]="!ended" [word]="wordToGuess" style="width:100%">
 
         </hangman-keyboard>
         <button (click)="resetGame()" class="back-btn">Back to Setup</button>

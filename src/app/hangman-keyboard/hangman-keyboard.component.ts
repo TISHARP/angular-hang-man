@@ -12,6 +12,7 @@ import { KEYS } from '../../utils/constants';
 export class HangmanKeyboardComponent {
   mkeys = KEYS as string[];
   guessedLetters = [] as string[];
+  @Input() word = '' as string;
   @Input() enabled = true as boolean;
   @Output() guessEvent = new EventEmitter<string[]>();
   sendKeys = () => {

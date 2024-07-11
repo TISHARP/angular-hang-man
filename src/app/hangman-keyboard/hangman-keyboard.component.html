@@ -1,5 +1,5 @@
 <div class="keyboard-wrapper">
     <div class="keyboard-container">
-        <button (click)="addKey(mkey)" [ngClass]="{ 'keyboard-btn': true, 'active': !guessedLetters.includes(mkey), 'inactive': guessedLetters.includes(mkey)}" *ngFor="let mkey of mkeys">{{mkey}}</button>
+        <button (click)="addKey(mkey)" [ngClass]="{ 'keyboard-btn': true, 'active': guessedLetters.includes(mkey) && word.includes(mkey), 'inactive': guessedLetters.includes(mkey) && !word.includes(mkey)}" *ngFor="let mkey of mkeys">{{mkey}}</button>
     </div>
 </div>
