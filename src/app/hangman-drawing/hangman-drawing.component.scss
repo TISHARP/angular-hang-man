@@ -1,58 +1,59 @@
 .hangman-drawing{
     position: relative;
+    height: 216px;
     & .drawing-head{
         position: absolute;
-        height: 50px;
-        width: 50px;
+        height: 25px;
+        width: 25px;
         border-radius: 100%;
-        border: 10px solid black;
-        top: 50px;
-        right: -30px;
+        border: 8px solid black;
+        top: 48px;
+        right: -16px;
     }
     & .drawing-body{
         position: absolute;
-        height: 100px;
-        width: 10px;
+        height: 60px;
+        width: 8px;
         background: black;
-        top: 115px;
+        top: 85px;
         right: 0;
     }
     & .drawing-rarm{
         position: absolute;
-        height: 10px;
-        width: 100px;
+        height: 8px;
+        width: 60px;
         background: black;
-        top: 150px;
-        right: -100px;
+        top: 110px;
+        right: -60px;
         rotate: -30deg;
         transform-origin: left bottom;
     }
     & .drawing-larm{
         position: absolute;
-        height: 10px;
-        width: 100px;
+        height: 8px;
+        width: 60px;
         background: black;
-        top: 150px;
-        right: 10px;
+        top: 110px;
+        right: 8px;
         rotate: 30deg;
         transform-origin: right bottom;
     }
     & .drawing-rleg{
         position: absolute;
-        height: 10px;
-        width: 100px;
+        height: 8px;
+        width: 60px;
         background: black;
-        top: 200px;
-        right: -90px;
+        top: 135px;
+        right: -53px;
         rotate: 60deg;
         transform-origin: left bottom;
     }
     & .drawing-lleg{
         position: absolute;
-        height: 10px;
-        width: 100px;
+        height: 8px;
+        width: 60px;
         background: black;
-        top: 200px;
+        top: 135px;
         right: 0;
         rotate: -60deg;
         transform-origin: right bottom;
@@ -60,26 +61,26 @@
     & .drawing-rope{
         position: absolute;
         height: 50px;
-        width: 10px;
+        width: 8px;
         background: black;
         top: 0;
         right: 0;
     }
     & .drawing-hook{
-        height: 10px;
-        width: 200px;
+        height: 8px;
+        width: 100px;
         background: black;
-        margin-left: 120px;
+        margin-left: 55px;
     }
     & .drawing-pole{
-        height: 400px;
-        width: 10px;
+        height: 50px;
+        width: 8px;
         background: black;
-        margin-left: 120px;
+        margin-left: 55px;
     }
     & .drawing-stand{
-        height: 10px;
-        width: 250px;
+        height: 8px;
+        width: 120px;
         background: black;
     }
 }

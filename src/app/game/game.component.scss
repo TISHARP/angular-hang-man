@@ -12,4 +12,56 @@
             display: none;
         }
     }
+    & .length-options, & .chances-options{
+        display: grid;
+        grid-template-columns: minmax(15px,1fr) minmax(15px,1fr) minmax(15px,1fr);
+        gap: 0.25em;
+        & button{
+            width: 100%;
+            border: 3px solid black;
+            background: none;
+            aspect-ratio: 1 / 1;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            padding: 0.25rem;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            &.active{
+                background-color: hsl(200,100%,50%);
+            }
+            &:hover{
+                background-color: hsl(200,100%,75%);
+            }
+        }
+    }
+    & .start-btn{
+        width: 100%;
+        margin-top: 0.25rem;
+        border: 3px solid black;
+        background: none;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: 0.25rem;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+        &.active{
+            background-color: hsl(200,100%,50%);
+        }
+        &:hover{
+            background-color: hsl(200,100%,75%);
+        }
+    }
+    & .back-btn{
+        height: 100px;
+        font-weight: bold;
+        font-size: 2.5em;
+        width: 100%;
+        border: 3px solid black;
+        background: white;
+        &:hover{
+            background-color: hsl(200,100%,75%);
+        }
+    }
 }

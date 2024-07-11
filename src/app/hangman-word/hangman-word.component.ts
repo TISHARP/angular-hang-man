@@ -11,4 +11,5 @@ import { Component, Input } from '@angular/core';
 export class HangmanWordComponent {
   @Input() word = ['y','e','s','s','i','r'];
   @Input() guessedLetters = ['h','p'];
+  @Input() ended = false;
 }

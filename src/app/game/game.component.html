@@ -1,19 +1,48 @@
 <div class="game">
-    <div [ngClass]="{'end-text': true, 'hidden': !ended}">
-        @if(remaining===0){
-            Lose
-        }
-        @else{
-            Win
-        }
-    </div>
-    <hangman-drawing [remaining]="remaining" [word]="wordToGuess" [guessedLetters]="guessedLetters">
+    @if(readyState){
+        <div [ngClass]="{'end-text': true, 'hidden': !ended}">
+            You
+            @if(remaining===0){
+                Lost
+            }
+            @else{
+                Won
+            }
+        </div>
+        <hangman-drawing [remaining]="remaining" [word]="wordToGuess" [guessedLetters]="guessedLetters">
 
-    </hangman-drawing>
-    <hangman-word [word]="wordToGuess.split('')" [guessedLetters]="guessedLetters">
+        </hangman-drawing>
+        <hangman-word [ended]="ended" [word]="wordToGuess.split('')" [guessedLetters]="guessedLetters">
 
-    </hangman-word>
-    <hangman-keyboard (guessEvent)="receiveKeys($event)" [enabled]="!ended" style="width:100%">
+        </hangman-word>
+        <hangman-keyboard (guessEvent)="receiveKeys($event)" [enabled]="!ended" style="width:100%">
 
-    </hangman-keyboard>
+        </hangman-keyboard>
+        <button (click)="resetGame()" class="back-btn">Back to Setup</button>
+    }
+    @else{
+        <div class="game-settings-container">
+            <div class="length-container">
+                <span class="length-label">
+                    Word Length:
+                </span>
+                <div class="length-options">
+                    <button *ngFor="let num of nums" (click)="handleLength(num)" [ngClass]="{'option-btn': true, 'active': num==wordLength}">
+                        {{num}}
+                    </button>
+                </div>
+            </div>
+            <div class="chances-container">
+                <div class="chances-label">
+                    Incorrect Attempts:
+                </div>
+                <div class="chances-options">
+                    <button *ngFor="let num of nums" (click)="handleChances(num)" [ngClass]="{'option-btn': true, 'active': num==allowedAttempts}">
+                        {{num}}
+                    </button>
+                </div>
+            </div>
+            <button (click)="fetchWord()" class="start-btn">Start Game</button>
+        </div>
+    }
 </div>

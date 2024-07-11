@@ -10,6 +10,5 @@ import { Component, Input } from '@angular/core';
 export class HangmanDrawingComponent {
   @Input() word = '';
   @Input() guessedLetters = [] as string[];
-  @Input() allowedAttempts = 6 as number;
-  @Input() remaining = this.allowedAttempts - this.guessedLetters.filter((v)=>!this.word.includes(v)).length as number;
+  @Input() remaining = 12 as number;
 }

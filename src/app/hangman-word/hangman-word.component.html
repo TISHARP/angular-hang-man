@@ -6,9 +6,16 @@
             </span>
         }
         @else{
-            <span class="hidden-letter">
-                {{letter}}
-            </span>
+            @if(!ended){
+                <span class="hidden-letter">
+                    {{letter}}
+                </span>
+            }
+            @else{
+                <span class="missing-letter">
+                    {{letter}}
+                </span>
+            }
         }
     </span>
 </div>
